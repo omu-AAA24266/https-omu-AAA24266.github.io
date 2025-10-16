@@ -3,12 +3,12 @@
 // 課題1: 変数と関数
 function task1() {
     // TODO: 以下の変数を作成してください
-    let name = "山田太郎"; // あなたの名前を入力
-    let age = 25;   // あなたの年齢を入力
-    let favoriteColor = "青"; // 好きな色を入力
+    let name = ""; // あなたの名前を入力
+    let age = ;   // あなたの年齢を入力
+    let favoriteColor = ""; // 好きな色を入力
     
     // TODO: 趣味の配列を作成してください
-    let hobbies = ["プログラミング", "読書", "映画鑑賞"]; // 例: ["プログラミング", "読書", "映画鑑賞"]
+    let hobbies = ["", "", ""]; // 例: ["プログラミング", "読書", "映画鑑賞"]
     
     // 結果を表示
     const output = document.getElementById('task1-output');
