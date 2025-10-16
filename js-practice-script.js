@@ -28,7 +28,7 @@ function task1() {
 // 課題2: 計算機能
 function calculate() {
     try {
-        // TODO: 計算処理を実装してください
+        // 入力値を取得
         const num1 = parseFloat(document.getElementById('num1').value);
         const operator = document.getElementById('operator').value;
         const num2 = parseFloat(document.getElementById('num2').value);
@@ -39,18 +39,19 @@ function calculate() {
         }
         
         let result;
-        // TODO: switch文またはif文を使って計算を実装
+        // TODO: switch文を使って計算を実装
         switch (operator) {
             case '+':
-                result = num1 + num2;
+                result = num1 + num2;  // 加算
                 break;
             case '-':
-                result = num1 - num2;
+                // TODO: 減算処理を実装
                 break;
             case '*':
-                result = num1 * num2;
+                // TODO: 乗算処理を実装
                 break;
             case '/':
+                // TODO: 除算処理を実装（0除算エラーも考慮）
                 if (num2 === 0) {
                     throw new Error('0で割ることはできません');
                 }
@@ -60,9 +61,11 @@ function calculate() {
                 throw new Error('無効な演算子です');
         }
         
-        document.getElementById('calculation-result').innerHTML = `結果: ${num1} ${operator} ${num2} = ${result}`;
+        document.getElementById('calculation-result').innerHTML = 
+            `結果: ${num1} ${operator} ${num2} = ${result}`;
     } catch (error) {
-        document.getElementById('calculation-result').innerHTML = `エラー: ${error.message}`;
+        document.getElementById('calculation-result').innerHTML = 
+            `エラー: ${error.message}`;
     }
 }
 
@@ -71,15 +74,19 @@ const colors = ['red', 'blue', 'green', 'yellow', 'purple', 'orange'];
 let currentColorIndex = 0;
 
 function changeColor() {
+    // TODO: 色を変更する処理を実装
+    // ヒント1: currentColorIndexを1増やす
+    // ヒント2: インデックスが配列の長さを超えたら0に戻す
+    // ヒント3: document.getElementById('color-box').style.backgroundColor で色を変更
+    
     currentColorIndex = (currentColorIndex + 1) % colors.length;
-    const colorBox = document.getElementById('color-box');
-    colorBox.style.backgroundColor = colors[currentColorIndex];
+    document.getElementById('color-box').style.backgroundColor = colors[currentColorIndex];
 }
 
 function resetColor() {
+    // TODO: 色をリセットする処理を実装
     currentColorIndex = 0;
-    const colorBox = document.getElementById('color-box');
-    colorBox.style.backgroundColor = colors[0];
+    document.getElementById('color-box').style.backgroundColor = colors[0];
 }
 
 // 課題4: イベント処理と配列操作
