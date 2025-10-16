@@ -45,10 +45,10 @@ function calculate() {
                 result = num1 + num2;  // 加算
                 break;
             case '-':
-                // TODO: 減算処理を実装
+                result = num1 - num2; // TODO: 減算処理を実装
                 break;
             case '*':
-                // TODO: 乗算処理を実装
+                result = num1 * num2; // TODO: 乗算処理を実装
                 break;
             case '/':
                 // TODO: 除算処理を実装（0除算エラーも考慮）
