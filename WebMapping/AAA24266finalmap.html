@@ -129,6 +129,26 @@
                 // GeoJSONレイヤに地図がフィットするように表示範囲を自動調整
                 map.fitBounds(selected_area.getBounds());
             });
+                // ローカルPC上のOSRMサーバで杉本キャンパスからなかもずキャンパスまでのルートを検索するURL
+    const url = 'https://routing.openstreetmap.de/routed-car/route/v1/driving/135.505276,34.592331;135.506274,34.544865?geometries=geojson&overview=full'
+
+    async function addRouteLayer(){
+      const response = await fetch(url);
+      const json = await response.json();
+      routeLayer = L.geoJSON(json['routes'][0]['geometry'],{
+                    "color": "#FF00FF",
+                    "weight": 6,
+                    "opacity": 0.65
+                });                            
+      routeLayer.addTo(map);
+      
+      // 地図をルートに合うように調整
+      const bounds = routeLayer.getBounds();
+      map.fitBounds(bounds); 
+      
+    }
+    // 地図にルートを追加
+    addRouteLayer();
     </script>
 </body>
 
